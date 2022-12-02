@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<conteudo>
+
+    <tituloinicio>
+    Sobre nós
+    </tituloinicio>
+
+    <subTitulo_inicio>
+    O que é a BeeTech?
+    </subTitulo_inicio>
+
+    <texto_inicio>
+    A BEETECH tem por objetivo melhorar as condições de trabalho de diversos apicultores espalhados por todo o Brasil, auxiliando-os e tornando prático o execício desta profissão. Hoje, o monitoramento de toda a colmeia é realizado de forma manual e diária. Logo, manter a manutenção de um ou mais apiários não é uma tarefa simples, pois exige muito estudo, dedicação e experiência. Os canais para a comercialização da produção ainda se encontram limitados, a inserção das tecnologias nesta área e até mesmo a gestão ainda são rudimentares. Porém, é consenso entre os apicultores, de que há campo para crescer, e isso pode ocorrer a partir do momento em que grupos/equipes como o nosso auxiliem este campo, que por mais que seja muito importante, muitas vezes é esquecido.
+    </texto_inicio>
+
+    <titulo_projeto>
+    Sobre o projeto BeeHive
+    </titulo_projeto>
+    
+    <texto_projeto>
+    O desenvolvimento da atividade apícola, pode materializar-se tendo como efeito um acidente, caso medidas preventivas não sejam adequadamente implementadas e incorporadas no cotidiano dessas pessoas. Assim, é possível que a observação de um apiário, por exemplo, leve à conclusão de que ali existem os riscos físicos, biológicos, químicos, ergonômicos e de acidentes.
+    Portanto, nosso projeto visa:
+    </texto_projeto>
+
+    <informacao1_projeto>
+    1- O Controle a alimentação das abelhas de forma automática, sem a necessidade de que o apícultor se locomova diariamente até o apiário.
+    </informacao1_projeto>
+
+    <informacao2_projeto>
+    2- Controlar a quantidade de alimento recebidos pelas abelhas por meio de um aplicativo.
+    </informacao2_projeto>
+
+    <informacao3_projeto>
+    3- Consultar o tempo em que este alimento é consumido
+    </informacao3_projeto>
+
+    <informacao4_projeto>
+    4- Classificar a colmeia em: forte e fraca de acordo com sua ingestão deste alimento.
+    </informacao4_projeto>
+
+    <informacao5_projeto>
+    5- Disponibilizar uma aba dentro do app que ensine sobre os cuidados necessários para manter saúde das abelhas.
+    </informacao5_projeto>
+
+    <informacao6_projeto>
+    6- A forma correta de manusear os nossos equipamentos.
+    </informacao6_projeto>
+
+    <titulo_integrantes>
+    Integrantes
+    </titulo_integrantes>
+    <titulo_blog>
+    Curiosidades sobre a apicultura.
+    </titulo_blog>
+
+    <texto_footer>
+    BeeTech 2022, BeeHive - Landing page.
+    </texto_footer>
+
+
+    <link1_footer>Instagram</link1_footer>
+    <link2_footer>Twitter</link2_footer>
+    <link3_footer>Suporte</link3_footer>
+
+    <imagem_1 fileName="paulo.png">paulo.png</imagem_1>
+    <imagem_2 fileName="rafa.png">rafa.png</imagem_2>
+    <imagem_3 fileName="ruth.png">ruth.png</imagem_3>
+
+
+    <postagem codigo="1">
+			<titulo>Quantos quilos de mel uma colmeia produz?</titulo>
+			<corpo>Uma abelha produz 5 gramas de mel por ano. Para produzir um quilo de mel, as abelhas precisam visitar 5 milhões de flores. Como uma colmeia abriga até 50 mil abelhas e cada abelha produz 5 gramas de mel por ano, a colmeia pode produzir, anualmente, 250 quilos de mel.</corpo>
+			
+		</postagem>
+		<postagem codigo="2">
+			<titulo>Como o mel é feito?</titulo>
+			<corpo>Com a língua, a abelha recolhe o néctar das flores e o guarda numa bolsa localizada no fundo da garganta. Depois, ela volta para a colmeia e o néctar vai passando de abelha para abelha. A água evapora, o néctar engrossa e se transforma em mel.</corpo>
+			
+		</postagem>
+		<postagem codigo="3">
+			<titulo>Como fazer açúcar invertido?</titulo>
+			<corpo>INGREDIENTES: 1330 gramas de açúcar, 600ml de água, 2 gramas ácido cítrico, 60 gramas de mel. MODO DE PREPARO: Primeiramente misture em uma panela o açúcar e a água. Leve-os ao fogo e fique mexendo até que comece a sair vapor. Quando começar a sair vapor adicione o ácido cítrico e o mel. Mexa estes ingredientes e baixe o fogo. Deixe no fogo baixo de 25 a 30 minutos. Neste período não precisa mais mexer.</corpo>
+			
+		</postagem>
+		<postagem codigo="4">
+			<titulo>Qual é a alimentação natural das abelhas?</titulo>
+			<corpo>As abelhas se alimentam de água, mel ou néctar e pólen que coletam nas flores. Esses alimentos hidratam e fornecem energia, proteínas, vitaminas, sais minerais e gorduras.</corpo>
+			
+		</postagem>
+		<postagem codigo="5">
+			<titulo>Qual a importância das abelhas para o ecossistema?</titulo>
+			<corpo>A vida das abelhas é crucial para o planeta e para o equilíbrio dos ecossistemas, já que, na busca do pólen, sua refeição, estes insetos polinizam plantações de frutas, legumes e grãos. Esta polinização é indispensável, pois é através dela que cerca de 80% das plantas se reproduzem.</corpo>
+			
+		</postagem>
+        
+
+        
+	</conteudo>

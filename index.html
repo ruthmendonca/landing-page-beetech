@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/funcoes.js" type="text/javascript"></script>
+    <!-- <script src="js/blog.js" type="text/javascript"></script> -->
+    <title>BeeTech</title>
+
+    <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=Changa:wght@500&display=swap');
+      :root{
+          --color-white: #fff;
+          --color-dark1: #272727;
+          --color-dark2: #2d2d2d;
+          --color-dark3: #414141;
+          --color-dark4: #1c1c1c;
+          --color-dark5: #343434;
+          --color-purple: #b040ff;
+          --color-amarelo-escuro: #e8a820;
+      }
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      body{
+          font-family: Arial, Helvetica, sans-serif;
+          color: var(--color-white);
+          background-color: #212529;
+      }
+      .img_logo_header{
+          width: 45px;
+      }
+      .header,
+      .navigation_header{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+      }
+      .header{
+          background-color: var(--color-dark2);
+          justify-content: space-between;
+          padding: 0 10%;
+          height: 7vh;
+          box-shadow: 1px 1px 4px var(--color-dark4);
+      }
+      .navigation_header{
+          gap: 3em;
+          z-index: 2;
+      }
+      
+      .navigation_header a{
+          text-decoration: none;
+          color: var(--color-amarelo-escuro);
+          transition: 1s;
+          font-weight: bold;
+          font-size: 18px;
+      }
+      .navigation_header a:hover{
+          color: var(--color-white);
+      }
+      
+      .btn_icon_header{
+          background: transparent;
+          border: none;
+          color: var(--color-white);
+          cursor: pointer;
+          display: none;
+      }
+      @media screen and (max-width: 768px) {
+          .navigation_header{
+              position: absolute;
+              flex-direction: column !important;
+              top: 0;
+              background: var(--color-dark5);
+              height: 100%;
+              width: 35vw;
+              padding: 1em;
+              animation-duration: 1s;
+              margin-left: -100vw;
+          }
+          .btn_icon_header{
+              display: block;
+          }
+      }
+      @keyframes showSidebar {
+          from {margin-left: -100vw;}
+          to {margin-left: -10vw;}
+      }
+
+
+
+      /*  */
+      /*  */
+
+
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.container .card{
+  position: relative;
+  width: 320px;
+  height: 500px;
+  background: #232323;
+  border-radius: 20px;
+  overflow: hidden;
+
+}
+
+.container .card:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e8a820;
+  clip-path: circle(150px at 80% 20%);
+  transition: 0.5s ease-in-out;
+}
+
+.container .card:hover:before{
+  clip-path: circle(300px at 80% -20%);
+}
+
+
+.container .card .imgBx{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  width: 100%;
+  height: 220px;
+  transition: 0.5s;
+}
+
+.container .card:hover .imgBx{
+  top: 10%;
+  transform: translateY(0%);
+    
+}
+
+.container .card .imgBx img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) ;
+  width: 270px;
+}
+
+.container .card .contentBx{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+  z-index: 10;
+}
+
+.container .card:hover .contentBx{
+  height: 170px;
+}
+
+
+
+.container .card .contentBx .size, .container .card .contentBx .color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;opacity: 0;
+  visibility: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.container .card:hover .contentBx .size{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.container .card:hover .contentBx .color{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.6s;
+}
+    </style>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: #212529;">
+    
+  <div class="header" id="header" >
+    <button onclick="toggleSidebar()" class="btn_icon_header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+    </button>
+    <div class="logo_header">
+        
+        <h1 style="font-family: 'Changa', sans-serif;margin-top: 5px;color: #e8a820;">BeeTech</h1>
+
+    </div>
+    <div class="navigation_header" id="navigation_header">
+        <button onclick="toggleSidebar()" class="btn_icon_header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+        <a href="#sobrenos" >Sobre nós</a>
+        <a href="#beehive" >BeeHive</a>
+        <a href="#integrantes">Integrantes</a>
+    </div>
+</div>
+
+
+      <div style="height:auto;width: 100%; background-color: #313131; position: relative;">
+
+
+        
+     <!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" style="background-color: #e8a820;"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1" style="background-color: #e8a820;"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2" style="background-color: #e8a820;"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div style="width: 100%;height: 93vh; background-image: url( 'img/1.png');background-size: cover;">
+        <center>
+          
+          
+          <p style=" 
+          margin-left: 140px;
+          margin-top: 200px;
+          width: 580px;
+          font-size: 28px;
+          font-family: 'Changa', sans-serif;
+          color:#000000; 
+          
+           float: left;
+           text-align: justify;">
+            As abelhas são importantes em todas as regiões do planeta.
+            Elas são os principais polinizadores da natureza.
+            Você também pode criar abelhas  com nosso
+            sistema para alimentação de abelhas.
+            <br>
+            Faça parte desse enxame!
+           
+          </p>
+          
+        </center>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div style="width: 100%;height: 93vh;background-image: url( 'img/2.png');background-size: cover;">
+       
+                <center>
+          
+          
+                  <p style=" 
+                  margin-left: 140px;
+                  margin-top: 200px;
+                  width: 580px;
+                  font-size: 28px;
+                  font-family: 'Changa', sans-serif;
+                  color:#000000; 
+                  
+                   float: left;
+                   text-align: justify;">
+                    As abelhas são importantes em todas as regiões do planeta.
+                    Elas são os principais polinizadores da natureza.
+                    Você também pode criar abelhas  com nosso
+                    sistema para alimentação de abelhas.
+                    <br>
+                    Faça parte desse enxame!
+                   
+                  </p>
+                  
+                </center></div>
+    </div>
+    <div class="carousel-item">
+      <div style="width: 100%;height: 93vh;background-image: url( 'img/3.png');background-size: cover;">
+        <center>
+          
+          
+          <p style=" 
+          margin-left: 140px;
+          margin-top: 200px;
+          width: 580px;
+          font-size: 28px;
+          font-family: 'Changa', sans-serif;
+          color:#000000; 
+          
+           float: left;
+           text-align: justify;">
+            As abelhas são importantes em todas as regiões do planeta.
+            Elas são os principais polinizadores da natureza.
+            Você também pode criar abelhas  com nosso
+            sistema para alimentação de abelhas.
+            <br>
+            Faça parte desse enxame!
+           
+          </p>
+          
+        </center></div>
+    </div>
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev" >
+    <span class="carousel-control-prev-icon" ></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+  </div>
+  <div style="height:auto;width: 100%; background-color: #313131; position: relative;" id="sobre">
+  <!-- Sobre nós -->
+  <div class="container-fluid mt-3">
+    <div class="d-flex justify-content-around mb-3">
+      <div class="p-2 "></div>
+      <div class="p-2 " >
+       
+        <script type="text/javascript">funcaoTitulo();</script>
+    
+      </div>
+      <div class="p-2 "></div>
+    </div>
+  <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <center><img src="img/beetech.png" alt=""></center>
+      </div>
+      <div class="col-sm-6">
+        <h1 style="color: #f8d030;"><script type="text/javascript">funcaoSubtituloInicio();</script></h1>
+      <p style="color: #f0dd90;"><script type="text/javascript">funcaoTextoInicio();</script></p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- fim sobre nos -->
+  </div>
+      
+
+
+  <div style="height:auto;width: 100%; background-color: #212529; position: relative;" id="beehive">
+  
+    <!-- sobre beehive -->
+
+
+    <div class="container-fluid mt-3" style="background-color: #212529;">
+      <div class="d-flex justify-content-around mb-3">
+        <div class="p-2 "></div>
+        <div class="p-2 " >
+          <h1 style="color: #f8d030; font-size: 250%;"><script type="text/javascript">funcaoTituloProjeto();</script></h1>
+        </div>
+        <div class="p-2 "></div>
+      </div>
+    
+    
+      <div class="row">
+        <div class="col-sm-4  text-white" style="width: 15%;"></div>
+        <div class="col-sm-4 bg-dark text-white" style="width: 70%;">
+          <p style="color: #f0dd90;"><script type="text/javascript">funcaoTextoProjeto();</script></p>
+        </div>
+        <div class="col-sm-4  text-white" style="width: 15%;"></div>
+      </div>
+      <!-- <div class="d-flex justify-content-around mb-3">
+        <div class="p-2 "></div>
+        <div class="p-2 "  style="width: 70%;">
+          
+        </div>
+        <div class="p-2 "></div>
+      </div> -->
+    
+    
+    <br>
+      <div class="row">
+        <div class="col-sm-4 text-white">
+          <ul>
+            <br>
+            <br>
+            <li style="list-style-type: none">
+              <script type="text/javascript">funcaoInformacao1();</script>
+            </li>
+            <br>
+            <li style="list-style-type: none">
+              <script type="text/javascript">funcaoInformacao2();</script>
+            </li>
+            <br>
+            <li style="list-style-type: none">
+              <script type="text/javascript">funcaoInformacao3();</script>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4 bg-dark text-white">
+          <center>
+            <img width="90%" src="img/beehive.png" alt="">
+          </center>
+        </div>
+        <div class="col-sm-4 text-white">
+          <ul>
+            <br>
+            <br>
+            <li style="list-style-type: none">
+              <script type="text/javascript">funcaoInformacao4();</script>  
+            </li>
+              <br>
+              <li style="list-style-type: none">
+              <script type="text/javascript">funcaoInformacao5();</script>
+              </li>
+              <br>
+              <li style="list-style-type: none">
+                <script type="text/javascript">funcaoInformacao6();</script>
+              </li>
+                
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- fim sobre beehive -->
+  
+  </div>
+
+
+  <div style="height:auto;width: 100%; background-color: #313131; position: relative;" id="integrantes">
+  <!-- intengrantes -->
+
+  <div class="container-fluid mt-3">
+    <div class="d-flex justify-content-around mb-3">
+      <div class="p-2 "></div>
+      <div class="p-2 " >
+        <h1 style="color: #f8d030; font-size: 250%;"><script type="text/javascript">funcaoTituloIntegrantes();</script></h1>
+      </div>
+      <div class="p-2 "></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4  text-white">
+        <center>
+          <div class="container">
+            <div class="card">
+              <div class="imgBx">
+                <img src="img/paulo.png" style="border-radius: 70%;">
+
+              </div>
+              <div class="contentBx">
+                <div class="size">
+                  
+                  <br>
+                  <center>
+                    <h4>Paulo Cesar
+                      <br>
+                      Desenvolvedor Web
+                    </h4>
+
+                  </center>
+                  
+                  
+                </div>
+                
+                
+              </div>
+            </div>
+          </div>
+        </center>
+        <br>
+      </div>
+      <div class="col-sm-4  text-white">
+        <center>
+          <div class="container">
+            <div class="card">
+              <div class="imgBx">
+                <img src="img/rafa.png" style="border-radius: 70%;">
+
+              </div>
+              <div class="contentBx">
+                <div class="size">
+                  
+                  <br>
+                  <center>
+                    <h4>Rafaela Arsky
+                      <br>
+                      Desenvolvedora Mobile
+                    </h4>
+
+                  </center>
+                  
+                </div>
+                
+                
+              </div>
+            </div>
+          </div>
+        </center>
+        <br>
+      </div>
+      <div class="col-sm-4  text-white">
+        <center>
+          <div class="container">
+            <div class="card">
+              <div class="imgBx">
+                <img src="img/ruth.png" style="border-radius: 70%;">
+
+              </div>
+              <div class="contentBx">
+                <div class="size">
+                  
+                  <br>
+                  <center>
+                    <h4>Ruth Mendonça
+                      <br>
+                      UX/UI Designer
+                    </h4>
+
+                  </center>
+                  
+                </div>
+                
+                
+              </div>
+            </div>
+          </div>
+        </center>
+      </div>
+    </div>
+    <br><br>
+  </div>
+  </div>
+
+  <!-- BLOG ABELHAS -->
+  <div style="height:auto;width: 100%; background-color: #212529;" id="blog">
+    
+    <br>
+    <center>
+      <h1 style="color: #f8d030; font-size: 250%;"><script type="text/javascript">funcaoTituloBlog();</script></h1>
+  
+      </center><br>
+      <center>
+        <div style="width: 70%; background-color:#1c1c1c;padding: 40px;border-radius: 40px;">
+          <div class="accordion accordion-flush" id="accordionExample" >
+            <script type="text/javascript">funcaoBlog();</script>
+          </div>
+        </div>
+        
+      </center>
+    <br>
+  </div>
+  
+  <div class="mt-5 p-4  text-white text-center" style="background-color: black;">
+    <div class="row">
+      <div class="col-sm-4 text-white">
+        <img src="img/beetech.png" class="float-start rounded" width="
+  120px" alt="">
+  <p style="position:relative;  color: #f8d030;" >
+    <br>
+    <br>
+    <script type="text/javascript">funcaoTextoFooter();</script>
+
+      </div>
+      <div class="col-sm-4  text-white"  style="background-color: black;">
+        
+
+        <center>
+          <br>
+          <br>
+            <a href="https://www.instagram.com/beetech__/"  style="text-decoration: none; color: #f8d030; margin-left: 20px; ">
+              <script type="text/javascript">funcaoLink1();</script>
+            </a>
+          <a href="https://twitter.com/BeeTech_" style="text-decoration: none; color: #f8d030; margin-left: 20px;">
+            <script type="text/javascript">funcaoLink2();</script>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=5513996212505" target="_blank" style="text-decoration: none; color: #f8d030;margin-left: 20px;">
+            <script type="text/javascript">funcaoLink3();</script>
+          </a>
+        </center>
+        
+      </div>
+      <div class="col-sm-4  text-white"></div>
+    </div>
+  </div>
+  
+
+
+
+  
+
+
+</body>
+</html>
+
+
+
+
+<!-- referencias
+
+
+https://abelha.org.br/
+
+
+https://www.semabelhasemalimento.com.br/blog/page/9/
+
+
+-->
+
+
